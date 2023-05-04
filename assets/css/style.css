@@ -46,6 +46,10 @@
   background-repeat: repeat;
 }
 
+#footer .footer-bottom {
+  border-top: 1px solid var(--color2) !important;
+}
+
 #footer::before{
   /* background:linear-gradient(316deg, #01062c85, #180f0885) !important; */
 }
