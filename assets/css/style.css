@@ -806,7 +806,7 @@ section {
 
 .clients img:hover,.clients svg:hover  {
   filter: none;
-  transform: scale(1.15);
+  transform: scale(1.7);
 }
 
 @media (max-width: 768px) {
