@@ -35,15 +35,13 @@
 
 
 #hero {
-  /* background: url("https://images.unsplash.com/photo-1673861561475-e0415df68554?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80") top center; */
-  background: url("../../media/hero.webp") top center;
+  background: url("../../media/hero.svg") top center;
 }
 #footer {
-  /* background: url("https://images.unsplash.com/photo-1680055199554-a39e82ebc6a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80") center center no-repeat;
-  background-size: cover; */
-
-  background: url("../../media/white_carbon.webp") center center repeat;
-  background-repeat: repeat;
+  background: url("../../media/hero2.svg") center;
+  background-size: cover;
+  /* background: url("../../media/white_carbon.webp") center center repeat; */
+  /* background-repeat: repeat; */
 }
 
 #footer .footer-bottom {
@@ -52,6 +50,7 @@
 
 #footer::before{
   /* background:linear-gradient(316deg, #01062c85, #180f0885) !important; */
+  background: rgba(21, 5, 23, 0) linear-gradient(rgb(26 0 33 / 0%) 0%, rgb(5 6 23 / 50%) 100%) repeat scroll 0% 0% !important;;
 }
 /*--------------------------------------------------------------
 # General
