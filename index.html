@@ -576,7 +576,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#tokenomics">Tokenomics</a></li>
-          <li><a class="nav-link scrollto" href="#">Media Press Kit</a></li>
+          <li><a class="nav-link scrollto" onclick="window.mediaKit.showModal()">Media Press Kit</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -1437,6 +1437,153 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+
+
+  <dialog id="mediaKit" style="width: 90%;">
+    <div class="row">
+      <div class="col" style="text-align: right;"><div class="c-modal__close" onclick="mediaKit.close()">❌</div></div>
+    </div>
+    <article class="rm-Article " id="content"><header id="content-head"><div class="row clearfix"><div class="col-xs-12"><h1>Logos</h1><div class="excerpt"><div><span>These are official VaultX resources that you can include on your marketing materials, webpage, and/or mobile application.</p></div></div></div></div></header><div class="grid-container-fluid" id="content-container"><section class="content-body grid-100"><div class="markdown-body ng-non-bindable" style="margin-left: 31px;"><div class="rdmd-html"><div class="logos">
+      <table style="width:100%">
+        <tbody><tr>
+          <th style="background-color: white; padding:20px;">
+          <img src="media/VaultX-Wide-Wide-Dark.png" alt="For Light Background">
+            <h3 style="margin:0px;">For Light Backgrounds</h3>
+          <a href="media/VaultX-Wide-Wide-Dark.png">PNG</a>  •  <a href="#">SVG</a>
+          </th>
+          <th style="background-color: white; padding:20px;">
+          <img src="media/VaultX-Wide-Wide-Light.png" alt="For Dark Backgrounds"  style="background-color: #31374c;">
+            <h3 style="margin:0px;">Flat-colored White</h3>
+          <a href="media/VaultX-Wide-Wide-Light.png">PNG</a>  •  <a href="#">SVG</a>
+      
+          </th>
+        </tr> 
+      </tbody></table>
+        
+      </div>
+      
+      <style>
+        .logos p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      
+        .logos img {
+          width: 70%;
+          border: solid 1px #E2E6EF;
+          border-radius: 5px;
+          margin-bottom:10px;
+        }
+            
+      </style></div>
+      <h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="logomark"></div><div class="heading-text"><div id="section-logomark" class="heading-anchor_backwardsCompatibility"></div>Logomark</div><a aria-label="Skip link to Logomark" class="heading-anchor-icon fa fa-anchor" href="#logomark"></a></h2>
+      <div class="rdmd-html">
+        <div class="logomark">
+      
+          <div class="row">
+                    <div class="col text-center" style="background-color: white; padding:20px;">
+                    <img style="background-color: #E5E8EB;" src="media/vaultx-logo-mark-dark.png" alt="VaultX Blue Logo Mark">
+                      <h3 style="margin:0px;">Blue<br>Logomark</h3>
+                    <a href="media/vaultx-logo-mark-dark.png">PNG</a>  •  <a href="media/vaultx-logo-mark-dark.svg">SVG</a>
+                    </div>
+                   <div class="col text-center" style="background-color: white; padding:20px;">
+                    <img style="background-color: #31364A;" src="media/vaultx-logo-mark-white.png" alt="White Full-Colored VaultX logo">
+                      <h3 style="margin:0px;">White<br>Logomark</h3>
+                    <a href="media/vaultx-logo-mark-dark.png">PNG</a>  •  <a href="media/vaultx-logo-mark-dark.png">SVG</a>
+                    </div>
+                    <div class="col text-center" style="background-color: white; padding:20px;">
+                    <img style="background-color: #E5E8EB;" src="media/vaultx-logo-mark-dark.png" alt="Transparent">
+                      <h3 style="margin:0px;">Transparent<br> Logomark</h3>
+                    <a href="media/vaultx-logo-mark-dark.png">PNG</a>  •  <a href="media/vaultx-logo-mark-dark.png">SVG</a>
+                    </div> 
+                  </div> 
+           </div>
+      
+      <style>
+        .logomark p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      
+        .logomark img {
+          width: 120px;
+          padding: 5px;
+          border: solid 1px #E2E6EF;
+          border-radius: 5px;
+          margin-bottom:10px;
+        }
+        dialog::backdrop {
+            background: repeating-linear-gradient(
+              45deg,
+              #BF8D3069 0px,
+              #BF8D3069 50px,
+              #FBB82969 50px,
+              #FBB82969 100px,
+              #EDEBE669 100px,
+              #EDEBE669 150px,
+              #31374c69 150px,
+              #31374c69 200px,
+              #21273769 200px,
+              #21273769 250px
+            );
+            backdrop-filter: blur(5px);
+          }
+          dialog {
+            border: none !important;
+            border-radius: calc(25px);
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 1.6rem;
+          }
+
+          .c-modal__close {
+            position: sticky;
+            top: 0;
+            left: 100%;
+            min-width: 1px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: block;
+          }
+            
+      </style></div>
+      <h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="color-palette"></div><div class="heading-text"><div id="section-color-palette" class="heading-anchor_backwardsCompatibility"></div>Color Palette</div><a aria-label="Skip link to Color Palette" class="heading-anchor-icon fa fa-anchor" href="#color-palette"></a></h2>
+      <p>When designing materials to feature VaultX use our color palette to align with our brand.</p>
+      <div class="rdmd-html"><div class="brand-colors">
+      <table style="width:100%">
+        <tbody><tr>
+          <th style="background-color: #BF8D30; padding:20px;">
+            <h3 style="color: #EDEBE6; margin:0px;">Golden Oldie</h3>
+          <p style="color: #EDEBE6; margin:0px;">#BF8D30</p>
+          </th>
+          <th style="background-color: #FBB829; padding:20px;">
+            <h3 style="color: white; margin:0px;">Sunshine</h3>
+          <p style="color: white; margin:0px;">#FBB829</p>
+          </th>
+          <th style="background-color: #EDEBE6; padding:20px;">
+            <h3 style="color: #212737; margin:0px;">Cloud</h3>
+          <p style="color: #212737; margin:0px;">#EDEBE6</p>
+          </th>
+      
+          <th style="background-color: #31374c; padding:20px;">
+            <h3 style="color: #EDEBE6; margin:0px;">Regal Blue</h3>
+          <p style="color: #EDEBE6; margin:0px;">#31374c</p>
+          </th>
+      
+          <th style="background-color: #212737; padding:20px;">
+            <h3 style="color: #EDEBE6; margin:0px;">Royal Navy</h3>
+          <p style="color: #EDEBE6; margin:0px;">#212737</p>
+          </th>
+        </tr>
+        
+      </tbody></table>
+      </div>
+      <style>
+        .brand-colors p {font-weight:300;}
+      </style></div></div></article>
+  </dialog>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
