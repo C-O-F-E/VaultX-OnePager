@@ -35,7 +35,7 @@
   <meta property="twitter:image" content="https://vaultx.fi/media/hero.jpg">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Lexend:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -1270,8 +1270,215 @@
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">What is the Total Supply? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-0">What is DBR? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-0" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  The DBR is short for <strong>Duration Bonus Rate</strong> which is part of the reward calculation that increases the reward per second of commitment time of your Vault.
+                  It works like this: instead of taking the rate X number of seconds in the commitment, the rate is exponetially raised based on the number of seconds in the commitment.
+                  In other words, longer commitments actually pay better than shorter commitments instead of just adding up the rate for all the seconds as we've seen in other protocols. 
+                </p>
+              </div>
+            </li>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq-list-calc">How is DBR calculated? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-calc" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  <h1 class="c5" id="h.1dja4kvs24a2">
+                    <span class="c20">DBR: Duration Bonus Rate</span>
+                </h1>
+                <p class="c1">
+                    <span class="c0">Calculation of the DBR or Bonus Interest Rate is straightforward.</span>
+                </p>
+                <p class="c1">
+                    <span class="c0">The formula used to calculate the bonus interest rate takes into account the staking duration (length of the commitment) and applies a power function and multiplication to yield the bonus rate.</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <p class="c1">
+                    <span class="c0">The &#39;Duration Ratio &#39;is computed using the formula:</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <div class="cfix c21">
+                    <span class="c2 c4">Duration Ratio = </span>
+                    <span class="c16 c26 c15 c22 c18">Stake Duration</span>
+                    <span class="c16 c4 c15 c18 c22">&nbsp;/ </span>
+                    <span class="c16 c15 c17">Maximum Duration</span>
+                </div>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <ul class="c14 lst-kix_wbaf5ll0jgdn-0 start">
+                    <li class="c1 c8 li-bullet-0">
+                        <span class="c10 c18 c26">Stake Duration</span>
+                        <span class="c0">: The duration for which the user commits to stake their tokens.</span>
+                    </li>
+                    <li class="c1 c8 li-bullet-0">
+                        <span class="c10 c18 c23">Maximum Duration</span>
+                        <span class="c0">: The maximum staking duration permitted by the protocol.</span>
+                    </li>
+                </ul>
+                <p class="c1">
+                    <span class="c16">This ratio describes how long a given stake is relative to the </span>
+                    <span class="c16 c19">maximum</span>
+                    <span class="c0">&nbsp;possible duration.</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <p class="c1">
+                    <span class="c3">Calculation of the Bonus Interest Rate:</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <p class="c1">
+                    <span class="c0">The bonus interest rate is then calculated with this duration ratio using the formula:</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <div class="cfix c21">
+                    <span class="c2 c28">Bonus Rate</span>
+                    <span class="c2">&nbsp;= (</span>
+                    <span class="c2 c4">Duration Ratio</span>
+                    <span class="c2">)^(</span>
+                    <span class="c9 c15">Bonus Rate Exponent</span>
+                    <span class="c2">) * </span>
+                    <span class="c2 c13">Maximum Bonus Rate</span>
+                </div>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <ul class="c14 lst-kix_2v7o2n5zvu1y-0 start">
+                    <li class="c1 c8 li-bullet-0">
+                        <span class="c10 c4 c18">Duration Ratio</span>
+                        <span class="c0">: Computed previously.</span>
+                    </li>
+                    <li class="c1 c8 li-bullet-0">
+                        <span class="c9">Bonus Rate Exponent</span>
+                        <span class="c0">: A parameter set within the system to adjust the curve of bonus interest rates as they relate to stake duration.</span>
+                    </li>
+                    <li class="c1 c8 li-bullet-0">
+                        <span class="c10 c18 c25">Maximum Bonus Rate</span>
+                        <span class="c0">: The highest possible bonus interest rate available within the protocol.</span>
+                    </li>
+                </ul>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <p class="c1">
+                    <span class="c0">This formula has an exponential relationship between the stake duration and the bonus interest rate. As the duration ratio increases, the bonus interest rate grows exponentially up to the maximum bonus interest rate. The degree of this exponential growth is regulated by the Bonus Rate Exponent.</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>
+                <p class="c1">
+                    <span class="c0">Overall, this method of calculating the bonus interest rate encourages long-term staking within the VaultX platform. It rewards users who are invested in the long-term success of the VaultX token economy, enhancing stability by locking up tokens and reducing circulating supply.</span>
+                </p>
+                <p class="c1 c7">
+                    <span class="c0"></span>
+                </p>  
+                </p>
+              </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-br" class="collapsed">How is the Base Rate Calculated? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-br" class="collapse" data-bs-parent=".faq-list">
+
+              <p class="c1">
+                  <span class="c0">The base interest rate is a fundamental component of the VaultX platform &#39;s interest calculation, playing a key role in determining the returns from staking. This rate is intricately designed to adjust based on the circulating supply of VaultX tokens in the ecosystem, thus ensuring a dynamic and adaptive staking model.</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <p class="c1">
+                  <span class="c0">The calculation involves a number of steps:</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <ol class="c14 lst-kix_x2hutcplrhi2-0 start" start="1">
+                  <li class="c1 c8 li-bullet-0">
+                      <span class="c10">Total Supply and Locked Supply</span>
+                      <span class="c0">: The system first identifies the total supply of VaultX tokens and the amount that is currently locked within the contract. The total supply is obtained directly from the VaultX token contract. The locked supply is the amount of VaultX tokens currently held by the contract, which represents the tokens that are currently staked.</span>
+                  </li>
+              </ol>
+              <p class="c1 c11 c7">
+                  <span class="c0"></span>
+              </p>
+              <ol class="c14 lst-kix_x2hutcplrhi2-0" start="2">
+                  <li class="c1 c8 li-bullet-0">
+                      <span class="c10">Circulating Supply</span>
+                      <span class="c0">: The circulating supply is calculated by subtracting the locked supply from the total supply. This represents the VaultX tokens available in the open market.</span>
+                  </li>
+              </ol>
+              <p class="c1 c11 c7">
+                  <span class="c0"></span>
+              </p>
+              <ol class="c14 lst-kix_x2hutcplrhi2-0" start="3">
+                  <li class="c1 c8 li-bullet-0">
+                      <span class="c10">Circulating Ratio</span>
+                      <span class="c0">
+                          : This ratio represents the proportion of VaultX tokens currently in circulation relative to the total supply. It is expressed in basis points (bps), where 1 basis point is equal to 0.01%. For example, if 50% of the total VaultX tokens are in circulation, <br>then the circulating ratio is 5000 bps.
+                      </span>
+                  </li>
+              </ol>
+              <p class="c1 c11 c7">
+                  <span class="c0"></span>
+              </p>
+              <ol class="c14 lst-kix_x2hutcplrhi2-0" start="4">
+                  <li class="c1 c8 li-bullet-0">
+                      <span class="c10">Base Interest Rate Calculation</span>
+                      <span class="c0">:</span>
+                  </li>
+              </ol>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <p class="c1">
+                  <span class="c10">Lower Limit</span>
+                  <span class="c0">: If the circulating ratio is less than or equal to a predetermined minimum, the base interest rate is set to the minimum base interest rate defined by the system.</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <p class="c1">
+                  <span class="c10">Upper Limit</span>
+                  <span class="c0">: If the circulating ratio is above the minimum but below or equal to 100% (i.e., all tokens are in circulation), a decrease factor is calculated. This factor is the product of the base interest rate and the difference between the maximum basis points (10000) and the circulating ratio. This product is then divided by the difference between the maximum basis points (10000) and the minimum circulating ratio. The base interest rate is then decreased by this factor.</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <p class="c1">
+                  <span class="c10">Stake Duration</span>
+                  <span class="c0">: The base interest rate is then multiplied by the stake duration in seconds and divided by the total seconds in a year (31,536,000 seconds for a non-leap year). This annualizes the interest rate, providing a yearly return rate based on the staking period.</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <p class="c1">
+                  <span class="c0">The final result is the base interest rate for the stake. It adapts to the circulating supply of VaultX tokens and the duration of the stake, promoting a dynamic, market-responsive model for staking returns.</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              <p class="c1">
+                  <span class="c0">By tying the base interest rate to the circulating supply, the system incentivizes users to stake their tokens, as more circulating tokens mean lower base interest rates. Similarly, the dependence on stake duration motivates longer-term staking, as users gain more by staking for longer periods.</span>
+              </p>
+              <p class="c1 c7">
+                  <span class="c0"></span>
+              </p>
+              </div>
+            </li>
+            
+            
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq-list-1">What is the Total Supply? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse " data-bs-parent=".faq-list">
                 <p>
                   100 Billion VX Tokens
                 </p>
@@ -1286,6 +1493,7 @@
                 </p>
               </div>
             </li>
+
 
             <li data-aos="fade-up" data-aos-delay="200">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Are there Fees?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
@@ -1582,6 +1790,114 @@
       </div>
       <style>
         .brand-colors p {font-weight:300;}
+        .c17 {
+                color: #783f04;
+                font-weight: 400;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-family: "Lexend";
+                font-style: normal
+            }
+            .c13 {
+                color: #741b47;
+                text-decoration: none;
+                vertical-align: baseline;
+                font-style: normal
+            }
+
+            .c9 {
+                font-size: 12pt;
+                font-family: "Lexend";
+                color: #85200c;
+                font-weight: 700
+            }
+
+            .c2 {
+                font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700
+            }
+
+            .c24 {
+                background-color: #cccccc;
+                max-width: 468pt;
+                padding: 72pt 72pt 72pt 72pt
+            }
+
+            .c8 {
+                margin-left: 36pt;
+                padding-left: 0pt
+            }
+
+            .c14 {
+                padding: 0;
+                margin: 0
+            }
+
+            .c10 {
+                font-size: 12pt;
+                font-weight: 700
+            }
+
+            .c19 {
+                font-style: italic
+            }
+
+            .c16 {
+              font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700
+            }
+
+            .c26 {
+                color: #b45f06;
+                font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700
+            }
+
+            .c28 {
+                color: #38761d;
+                font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700
+            }
+
+            .c4 {
+                color: #1155cc;
+                font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700
+            }
+
+            .c11 {
+                margin-left: 36pt
+            }
+
+            .c23 {
+                color: #783f04;
+                font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700;
+            }
+
+           .cfix{    background-color: #e0e0e0; display: table;}
+
+            .c7 {
+                height: 11pt
+            }
+
+            .c25 {
+                color: #741b47;
+                font-size: 12pt;
+                font-family: "Lexend";
+                font-weight: 700;
+            }
+
+            .c18 {
+                font-family: "Lexend"
+            }
+
       </style></div></div></article>
   </dialog>
 
