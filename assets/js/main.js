@@ -368,4 +368,89 @@ Highcharts.chart("pie", {
    */
   // new PureCounter();
 
+  
+  // initial progress value
+  let progress = 0;
+  // pause time in milliseconds
+  let pauseTime = 3000; 
+
+  const stepButtons = document.querySelectorAll('.step-button');
+  const progressBar = document.querySelector('#progress');
+
+  Array.from(stepButtons).forEach((button,index) => {
+      button.addEventListener('click', () => {
+          progressBar.setAttribute('value', index * 100 /(stepButtons.length - 1) );//there are 3 buttons. 2 spaces.
+
+          stepButtons.forEach((item, secindex)=>{
+              if(index > secindex){
+                  item.classList.add('done');
+              }
+              if(index < secindex){
+                  item.classList.remove('done');
+              }
+          })
+      })
+  })
+
+  // function to increment progress
+  function incrementProgress() {
+      if (progress < 100) {
+          progress++;
+          progressBar.value = progress;
+      } 
+  }
+  stepButtons[0].click();
+  // function to control progress and reset
+  function controlProgress() {
+      let intervalId = setInterval(function() {
+          // Increment progress till 1%
+          if(progress < 1){
+              incrementProgress();
+          }
+          // Pause at 1% then continue to 50%
+          else if(progress === 1){
+              clearInterval(intervalId);
+              stepButtons[0].click();
+              setTimeout(function(){
+                  intervalId = setInterval(function(){
+                      // Increment progress till 50%
+                      if(progress < 50){
+                          incrementProgress();
+                      }
+                      // Pause at 50% then continue to 100%
+                      else if(progress === 50){
+                          clearInterval(intervalId);
+                          stepButtons[1].click();
+                          setTimeout(function(){
+                              intervalId = setInterval(function(){
+                                  // Increment progress till 100%
+                                  if(progress < 100){
+                                      incrementProgress();
+                                  }
+                                  // Pause at 100% then start over
+                                  else if(progress === 100){
+                                      clearInterval(intervalId);
+                                      stepButtons[2].click();
+                                      setTimeout(function(){
+                                          progress = 0;
+                                          progressBar.value = progress;
+                                          controlProgress();
+                                      }, pauseTime); // pause for 3 seconds before starting over
+                                  }
+                              }, 100); // adjust time as needed
+                          }, pauseTime);
+                      }
+                  }, 100); // adjust time as needed
+              }, pauseTime);
+          }
+      }, 100); // adjust time as needed
+  }
+
+  window.onload = function() {
+      stepButtons[0].click();
+      controlProgress();
+  };
+
+
+ 
 })()
