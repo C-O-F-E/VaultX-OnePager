@@ -369,28 +369,31 @@ Highcharts.chart("pie", {
   // new PureCounter();
 
   
-  // initial progress value
-  let progress = 0;
-  // pause time in milliseconds
-  let pauseTime = 3000; 
-
-  const stepButtons = document.querySelectorAll('.step-button');
-  const progressBar = document.querySelector('#progress');
-
-  Array.from(stepButtons).forEach((button,index) => {
-      button.addEventListener('click', () => {
-          progressBar.setAttribute('value', index * 100 /(stepButtons.length - 1) );//there are 3 buttons. 2 spaces.
-
-          stepButtons.forEach((item, secindex)=>{
-              if(index > secindex){
-                  item.classList.add('done');
-              }
-              if(index < secindex){
-                  item.classList.remove('done');
-              }
+      // initial progress value
+      let progress = 0;
+      // pause time in milliseconds
+      let pauseTime = 3000; 
+  
+      const stepButtons = document.querySelectorAll('.step-button');
+      const progressBar = document.querySelector('#progress');
+      const accordionBoxes = document.querySelectorAll('.accordion-box'); // assuming your accordion boxes have the class .accordion-box
+  
+      Array.from(stepButtons).forEach((button,index) => {
+          button.addEventListener('click', () => {
+              progressBar.setAttribute('value', index * 100 /(stepButtons.length - 1) );
+  
+              stepButtons.forEach((item, secindex)=>{
+                  accordionBoxes[secindex].style.display = 'none'; // hide all accordion boxes
+                  if(index === secindex){
+                      item.classList.add('done');
+                      accordionBoxes[index].style.display = 'block'; // show only the clicked accordion box
+                  }
+                  else{
+                      // item.classList.remove('done');
+                  }
+              })
           })
       })
-  })
 
   // function to increment progress
   function incrementProgress() {
