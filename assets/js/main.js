@@ -389,7 +389,7 @@ Highcharts.chart("pie", {
                       accordionBoxes[index].style.display = 'block'; // show only the clicked accordion box
                   }
                   else{
-                      // item.classList.remove('done');
+                      item.classList.remove('done');
                   }
               })
           })
