@@ -63,13 +63,11 @@ Highcharts.chart("pie", {
     {
       name: "Token Allocation",
       data: [
-        { name: "Treasury", y: 40, sliced: true, selected: true },
-        ["Team", 22],
-        ["Liquidity and Future Funding", 15],
-        ["Ecosystem Rewards", 15],
-        ["Airdrop", 3],
-        ["Crowd Pooling / Etc", 3],
-        ["Advisors", 2]
+        { name: "Liquidity Pool", y: 60, sliced: true, selected: true },
+        ["Bonus Pool", 30],
+        ["NeonRain Airdrop", 4.20],
+        ["SYNC Airdrop", 4.20],
+        ["Other", 1.6],
       ]
     }
   ],
