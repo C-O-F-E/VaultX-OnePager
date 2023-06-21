@@ -383,13 +383,13 @@ Highcharts.chart("pie", {
               progressBar.setAttribute('value', index * 100 /(stepButtons.length - 1) );
   
               stepButtons.forEach((item, secindex)=>{
-                  accordionBoxes[secindex].style.display = 'none'; // hide all accordion boxes
+                  accordionBoxes[secindex].style.display = 'hidden'; // hide all accordion boxes
                   if(index === secindex){
                       item.classList.add('done');
                       accordionBoxes[index].style.display = 'block'; // show only the clicked accordion box
                   }
                   else{
-                      item.classList.remove('done');
+                      // item.classList.remove('done');
                   }
               })
           })
@@ -402,9 +402,10 @@ Highcharts.chart("pie", {
           progressBar.value = progress;
       } 
   }
-  stepButtons[0].click();
+
   // function to control progress and reset
   function controlProgress() {
+    // stepButtons[0].click();
       let intervalId = setInterval(function() {
           // Increment progress till 1%
           if(progress < 1){
@@ -450,8 +451,10 @@ Highcharts.chart("pie", {
   }
 
   window.onload = function() {
-      stepButtons[0].click();
+      // stepButtons[0].click();
       controlProgress();
+      stepButtons[0].click();
+
   };
 
 

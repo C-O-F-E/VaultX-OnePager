@@ -1856,21 +1856,24 @@
           margin-bottom:10px;
         }
         dialog::backdrop {
-            background: repeating-linear-gradient(
-              45deg,
-              #BF8D3069 0px,
-              #BF8D3069 50px,
-              #FBB82969 50px,
-              #FBB82969 100px,
-              #EDEBE669 100px,
-              #EDEBE669 150px,
-              #31374c69 150px,
-              #31374c69 200px,
-              #21273769 200px,
-              #21273769 250px
-            );
-            backdrop-filter: blur(5px);
+          background: repeating-linear-gradient( 62deg, 
+            #BF8D30AA 0px,
+            #BF8D30AA var(--pos1),
+            #FBB829CC var(--pos1),
+            #FBB829CC var(--pos2),
+            #EDEBE6FF var(--pos2),
+            #EDEBE6FF var(--pos3),
+            #31374CFF var(--pos3), 
+            #31374cFF var(--pos4), 
+            #212737CC var(--pos4), 
+            #212737CC 100% );
+          backdrop-filter: blur(5px);
+          --pos1: 3%;
+          --pos2: 5%;
+          --pos3: 7%;
+          --pos4: 9%;
           }
+          
           dialog {
             border: none !important;
             border-radius: calc(25px);
