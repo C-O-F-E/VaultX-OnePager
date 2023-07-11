@@ -1,7 +1,7 @@
 /**
 * Website Name: VaultX
 * Updated: April 2023 
-* Author: SYNCNetwork.com
+* Author: ceegee
 */
 Highcharts.chart("pie", {
   chart: {
@@ -63,11 +63,11 @@ Highcharts.chart("pie", {
     {
       name: "Token Allocation",
       data: [
-        { name: "Liquidity Pool", y: 60, sliced: true, selected: true },
-        ["Bonus Pool", 30],
-        ["NeonRain Airdrop", 4.20],
-        ["SYNC Airdrop", 4.20],
-        ["Other", 1.6],
+        { name: "Liquidity Pool", y: 50, sliced: true, selected: true },
+        ["Treasury", 20],
+        ["Bonus Pool", 15],
+        ["Airdrop", 10],
+        ["Bonus Hole", 5],
       ]
     }
   ],
